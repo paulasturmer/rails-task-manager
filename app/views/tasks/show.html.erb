@@ -1,0 +1,12 @@
+<h1>My tasks</h1>
+<h2><%= @task.title %></h2>
+<blockquote style="background-color: lightgray; padding: 20px;"><%= @task.details %></blockquote>
+<p>
+  <% if @task.completed == true %>
+    <%= check_box_tag 'completed', true, :checked =>true %> This task is completed
+  <% else %>
+    <%= check_box_tag 'completed', true %> This task is not completed yet
+  <% end %>
+</p>
+
+<%= link_to "Back to list", tasks_path %>
